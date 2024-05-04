@@ -1,0 +1,59 @@
+# Python-specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyzw
+*.pyw
+*.pyproj
+*.pycachefile
+*.pytest_cache/
+*.coverage
+.coverage
+htmlcov/
+.coverage.*
+.tox/
+.mypy_cache/
+.mypy/
+.mypy.ini
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+*.manifest
+*.spec
+*.msi
+*.egg-info
+*.dist-info
+*.exe
+*.db
+*.sqlite3
+*.sqlitedb
+*.sql
+*.log
+*.pdb
+*.bkp
+*.cache
+*.swp
+*.swo
+*.out
+
+# React-specific
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment-specific
+.env
+
+# IDE-specific
+.idea/
+.vscode/
