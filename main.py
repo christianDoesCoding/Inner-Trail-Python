@@ -33,6 +33,7 @@ async def read_item(item_id: int):
 
 @app.exception_handler(Exception)
 async def generic_error_handler(request, exc):
+    print("generic exception has been reached")
     return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content={"message": "Internal server error"})
 
 """ 
