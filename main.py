@@ -1,15 +1,10 @@
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, status
+from fastapi.responses import JSONResponse
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
 app = FastAPI()
-
-from typing import Union
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
 
 class Item(BaseModel):
     name: str
@@ -29,6 +24,17 @@ def update_item(item_id: int, item: Item):
     return {"item_name": item.name, "item_id": item_id}
 
 
+@app.get("/items/{item_id}")
+async def read_item(item_id: int):
+    if item_id == 0:
+        # Raise HTTPException for invalid item_id
+        raise HTTPException(status_code=400, detail="Item ID must be greater than zero")
+    return {"item_id": item_id}
+
+@app.exception_handler(Exception)
+async def generic_error_handler(request, exc):
+    print("generic exception has been reached")
+    return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content={"message": "Internal server error"})
 
 """ 
 *If deciding to use async/await*
