@@ -7,6 +7,12 @@ function App() {
     <div>
       <AuthenticationBox/>
     </div>
+  );
+}
+
+export default App;
+
+
     /*
     <div className="App">
       <header className="App-header">
@@ -25,7 +31,3 @@ function App() {
       </header>
     </div>
     */
-  );
-}
-
-export default App;

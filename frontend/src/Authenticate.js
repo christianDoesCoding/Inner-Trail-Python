@@ -1,5 +1,6 @@
 import './Authenticate.css'
-import { Box, TextField } from '@mui/material';
+//import { Box, TextField } from '@mui/material';
+
 
 export default function AuthenticationBox() {
     return(
@@ -7,11 +8,19 @@ export default function AuthenticationBox() {
             <div className="PasswordContainer">
             <div className="AuthBox">
                 <p> Inner Trail </p>
+                <div className="Username">
+                    <input type="text" placeholder="Username" />
+                </div>
+                <div className="Password">
+                    <input type="text" placeholder="Password" />
+                </div>
             </div>
             </div>
         </div>
     );
 }
+
+
 
 /*
 <Box
